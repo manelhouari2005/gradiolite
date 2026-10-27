@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MNIST Digit Classifier | Gradio-Lite</title>
+    <!-- Gradio-Lite CSS and JS (runs Pyodide WebAssembly in browser) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.css" />
+    <script type="module" crossorigin src="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0f19;
+            color: #f1f5f9;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <gradio-lite requirements="numpy,pillow">
+        <gradio-file name="model_weights_b64.py" url="./model_weights_b64.py"></gradio-file>
+        <gradio-file name="app.py" url="./app.py" entrypoint></gradio-file>
+    </gradio-lite>
+</body>
+</html>
